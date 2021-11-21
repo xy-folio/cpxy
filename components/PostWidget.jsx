@@ -9,13 +9,15 @@ const PostWidget = ({ categories, slug }) => {
     
     useEffect(() => {
         if(slug) {
-            getSimilarPosts(categories, slug)
-                .then((result) => setRelatedPosts(result))
+            getSimilarPosts(categories, slug).then((result) => {
+                setRelatedPosts(result);
+            });
         } else {
-            getRecentPosts()
-                .then((result) => setRelatedPosts(result))
+            getRecentPosts().then((result) => {
+                setRelatedPosts(result);
+        });
         }
-    }, [slug])
+    }, [slug]);
 
     console.log(relatedPosts)
 
@@ -45,7 +47,7 @@ const PostWidget = ({ categories, slug }) => {
                 </div>
             ))}
         </div>
-    )
-}
+    );
+};
 
-export default PostWidget
+export default PostWidget;
