@@ -8,7 +8,7 @@ module.exports = withPWA({
     register: true,
     skipWaiting: true,
     runtimeCaching,
-    buildExcludes: [/middleware-manifest.json$/]
-    //disable: process.env.NODE_ENV === "development",
+    buildExcludes: [/middleware-manifest.json$/],
+    disable: process.env.NODE_ENV === "development",
   },
 });
